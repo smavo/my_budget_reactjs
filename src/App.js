@@ -15,7 +15,7 @@ function App() {
   const [crearGasto, setCrearGasto] = useState(false)
 
 
-  useEffect( () =>{
+  useEffect(() => {
     if (crearGasto) {
       //console.log(gasto)
 
@@ -32,7 +32,7 @@ function App() {
       // Resetear 
       setCrearGasto(false)
     }
-  },[gasto, crearGasto, restante,gastos]);
+  }, [gasto, crearGasto, restante, gastos]);
 
   return (
     <div className="container">
@@ -41,19 +41,19 @@ function App() {
         <div className="contenido-principal contenido">
           {mostrarpregunta
             ? <Pregunta
-                guardarPresupuesto={guardarPresupuesto}
-                guardarRestante={guardarRestante}
-                actualizarPregunta={actualizarPregunta}
-              />
+              guardarPresupuesto={guardarPresupuesto}
+              guardarRestante={guardarRestante}
+              actualizarPregunta={actualizarPregunta}
+            />
             : <div className="row">
-                <div className="one-half column">
-                  <Form
-                    guardarGasto={guardarGasto}
-                    setCrearGasto={setCrearGasto}
-                  />
-                </div>
               <div className="one-half column">
-                <Listado 
+                <Form
+                  guardarGasto={guardarGasto}
+                  setCrearGasto={setCrearGasto}
+                />
+              </div>
+              <div className="one-half column">
+                <Listado
                   gastos={gastos}
                 />
                 <Control

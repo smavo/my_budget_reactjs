@@ -20,4 +20,4 @@ Control.prototype = {
     restante: PropTypes.number.isRequired,
 }
 
-export default Control
+export default Control;
